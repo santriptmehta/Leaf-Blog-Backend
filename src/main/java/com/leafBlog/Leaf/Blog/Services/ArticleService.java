@@ -44,4 +44,16 @@ public class ArticleService {
     public void deleteArticle(String id) {
         articleRepository.deleteById(id);
     }
+
+    public List<Article>getArticles(String search, String author){
+        if(search != null && author != null){
+            return articleRepository.findByTitleContainingAndAuthor(search, author);
+        } else if (search != null) {
+            return articleRepository.findByTitleContaining(search);
+        }else if (author != null){
+            return articleRepository.findByAuthor(author);
+        }else{
+            return articleRepository.findAll();
+        }
+    }
 }

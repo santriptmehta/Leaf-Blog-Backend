@@ -82,6 +82,9 @@ src/
 
 - **Get All Articles**: `GET /api/articles`
 - **Get Article by ID**: `GET /api/articles/{id}`
+- **Search Articles by Title**: `GET /api/articles?search=Spring`
+- **Search Articles by Author**: `GET /api/articles?author=Spring`
+- **Search Articles by Author & Title**: `GET /api/articles?author=Spring&author=John Doe`
 - **Create Article**: `POST /api/articles`
 - **Update Article**: `PUT /api/articles/{id}`
 - **Delete Article**: `DELETE /api/articles/{id}`

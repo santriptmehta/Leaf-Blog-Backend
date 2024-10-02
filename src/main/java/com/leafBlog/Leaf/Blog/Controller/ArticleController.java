@@ -19,10 +19,6 @@ public class ArticleController {
         this.articleService = articleService;
     }
 
-    @GetMapping
-    public List<Article> getAllArticles() {
-        return articleService.getAllArticles();
-    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Article> getArticleById(@PathVariable String id) {
@@ -45,5 +41,10 @@ public class ArticleController {
     public ResponseEntity<Void> deleteArticle(@PathVariable String id) {
         articleService.deleteArticle(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping
+    public List<Article> getArticles(@RequestParam(required = false) String search, @RequestParam(required = false) String author){
+        return articleService.getArticles(search, author);
     }
 }
