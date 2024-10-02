@@ -101,6 +101,12 @@ You can test the API using Postman or any other API testing tool. Here are some 
 1. **Get All Articles**:
     - Method: `GET`
     - URL: `http://localhost:8080/api/articles`
+    - Method: GET
+    - URL: `http://localhost:8080/api/articles?search=Spring`
+    - Filter Articles by Author:
+    - URL: `http://localhost:8080/api/articles?author=JohnDoe`
+    - Search Articles by Title and Filter by Author:
+    - URL: `http://localhost:8080/api/articles?search=Spring&author=John Doe`
 
 2. **Create a New Article**:
     - Method: `POST`
